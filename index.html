@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
@@ -26,11 +27,12 @@
             }
         }
     </script>
+
     <style>
         body {
             font-family: 'Bebas Neue', Impact, sans-serif;
         }
-        
+
         .tall-i {
             display: inline-block;
             transform: scaleY(1.4);
@@ -51,10 +53,11 @@
         .stagger-3 { animation-delay: 0.3s; opacity: 0; }
     </style>
 </head>
+
 <body class="bg-cream-beige min-h-screen">
     <div class="max-w-7xl mx-auto px-6 py-12">
-        
-        <!-- Logo/Title -->
+
+        <!-- Logo -->
         <header class="text-center mb-16 animate-fade-in">
             <h1 class="text-8xl md:text-9xl lg:text-[12rem] font-bebas uppercase tracking-tight text-charcoal leading-none mb-4">
                 SKÍTKASTIÐ
@@ -67,22 +70,17 @@
         <!-- Podcast Image -->
         <div class="max-w-2xl mx-auto mb-16 animate-fade-in stagger-1">
             <div class="relative aspect-square bg-burnt-orange rounded-sm shadow-2xl overflow-hidden">
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <div class="text-cream-beige text-9xl"></div>
-                </div>
                 <img src="boys.jpg" alt="SKÍTKASTIÐ" class="w-full h-full object-cover">
             </div>
         </div>
 
-        <!-- Episodes Section -->
+        <!-- Episodes -->
         <div class="animate-fade-in stagger-2">
             <h2 class="text-5xl md:text-6xl font-bebas uppercase text-burnt-orange mb-10 tracking-tight text-center">
                 Þættir
             </h2>
-            
-            <div id="episodes-container" class="max-w-5xl mx-auto space-y-8">
-                <!-- Episodes will be loaded here automatically -->
-            </div>
+
+            <div id="episodes-container" class="max-w-5xl mx-auto space-y-8"></div>
         </div>
 
         <!-- Footer -->
@@ -94,47 +92,45 @@
     </div>
 
     <script>
-        // Episode data - add your episodes here
-     const episodes = [
-    {
-        title: "Þáttur 1: Þetta var alltaf að fara enda svona",
-        id: "3oZGYWo0UfKvjk1vmNzria"
-    },
-    {
-        title: "Þáttur 2: Verið ill",
-        id: "3R0uERbhqacsn8rCRCkg79"
-    },
-    {
-        title: "Þáttur 3: Hákarlalobbíið",
-        id: "6FuIKcnXtnI104DpET9ZXZ"
-    }
+        const episodes = [
+            {
+                title: "Þáttur 1: Þetta var alltaf að fara enda svona",
+                id: "3oZGYWo0UfKvjk1vmNzria"
+            },
+            {
+                title: "Þáttur 2: Verið ill",
+                id: "3R0uERbhqacsn8rCRCkg79"
+            },
+            {
+                title: "Þáttur 3: Hákarlalobbíið",
+                id: "6FuIKcnXtnI104DpET9ZXZ"
+            }
         ];
 
-        // Load episodes
         const container = document.getElementById('episodes-container');
-        
+
         episodes.forEach(episode => {
             const episodeDiv = document.createElement('div');
             episodeDiv.className = 'bg-charcoal p-6 shadow-xl';
-            
+
             episodeDiv.innerHTML = `
                 <h3 class="text-3xl font-bebas uppercase text-burnt-orange mb-4 tracking-tight">
                     ${episode.title}
                 </h3>
                 <div class="aspect-video">
                     <iframe 
-                        style="border-radius:0px" 
-                        src="https://open.spotify.com/embed/episode/${episode.id}/video?utm_source=generator" 
-                        width="100%" 
-                        height="100%" 
-                        frameBorder="0" 
-                        allowfullscreen="" 
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        style="border-radius:0px"
+                        src="https://open.spotify.com/embed/episode/${episode.id}/video?utm_source=generator"
+                        width="100%"
+                        height="100%"
+                        frameBorder="0"
+                        allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                         loading="lazy">
                     </iframe>
                 </div>
             `;
-            
+
             container.appendChild(episodeDiv);
         });
     </script>
