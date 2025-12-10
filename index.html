@@ -33,12 +33,6 @@
             font-family: 'Bebas Neue', Impact, sans-serif;
         }
 
-        .tall-i {
-            display: inline-block;
-            transform: scaleY(1.4);
-            transform-origin: bottom;
-        }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -57,14 +51,32 @@
 <body class="bg-cream-beige min-h-screen">
     <div class="max-w-7xl mx-auto px-6 py-12">
 
-        <!-- Logo -->
+        <!-- Header -->
         <header class="text-center mb-16 animate-fade-in">
             <h1 class="text-8xl md:text-9xl lg:text-[12rem] font-bebas uppercase tracking-tight text-charcoal leading-none mb-4">
                 SKÍTKASTIÐ
             </h1>
+
             <p class="text-xl md:text-2xl font-bebas tracking-widest text-forest-green uppercase mt-6">
                 Þar sem við elskum náungann
             </p>
+
+            <!-- ICONS -->
+            <div class="flex items-center justify-center space-x-6 mt-4">
+                <!-- Spotify -->
+                <a href="https://open.spotify.com/show/0M3vrw86oq2ZeqJoySIUBW?si=72d1b110e4834ec8" 
+                   target="_blank" 
+                   class="hover:opacity-70 transition">
+                    <img src="images/spotify.png" alt="Spotify" class="w-10 h-10">
+                </a>
+
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@Eyddessu" 
+                   target="_blank" 
+                   class="hover:opacity-70 transition">
+                    <img src="images/youtube.png" alt="YouTube" class="w-10 h-10">
+                </a>
+            </div>
         </header>
 
         <!-- Podcast Image -->
